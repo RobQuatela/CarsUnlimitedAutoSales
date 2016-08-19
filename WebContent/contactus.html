@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width", initial-scale="1">
+		<title>Cars Unlimited Auto Sales</title>
+		
+		<link rel="stylesheet" href="css/cuas.css">
+		
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+		<style>
+			h1 {
+				color: #fff;
+				padding: 2px 0 5px 10px;
+				font-weight: bold;
+			}
+			
+			p {
+				padding-left: 10px
+			}
+			
+			.question-form {
+				color: #373737;
+				font-weight: bold;
+				text-shadow: 2px 2px 5px #e4e4e4;
+			}
+			
+			.button {
+				background-color: #373737;
+				color: #e4e4e4;
+				float: left;
+				padding: 10px;
+				border-radius: 10px;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				width: 90px;
+				height: 40px;
+			}
+		</style>
+
+	</head>
+
+	<body style="background: #e4e4e4;">
+		<?php
+			if(isset($_REQUEST['email'])) {
+				//email info
+				$admin_email = "rob.quatela@steemer.com";
+				$email = $_REQUEST['email'];
+				$name = $_REQUEST['name'];
+				$comment = $_REQUEST['comment'];
+					
+				//send mail
+				mail($admin_email, $name, $comment, $email);
+					
+				//email response
+				echo "Thank you for contacting us!";
+			}
+				
+			//if email variable is not filled out display the form
+			else {
+				echo "not working";
+			}
+		?>
+		<div class="banner">
+			<ul>
+				<li class="title">Cars Unlimited Auto Sales</li>
+				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="cars.html">Cars</a></li>
+				<li class="active"><a href="index.html">Home</a></li>
+			</ul>
+		</div>
+		<div class="container-fluid">
+			<form method="post" class="body-border question-form">
+				<fieldset>
+					<legend>
+						<h1>Have a Question?</h1>
+						<p>Submit your information and we will contact you right away</p>						
+					</legend>
+
+					<p>Name:
+					<br>
+					<input type="text" name="name" style="color: #000; background-color: #e4e4e4; font-weight: normal;">
+					</p>
+					<br>
+					<p>Phone:
+					<br>
+					<input type="text" name="phone" style="color: #000; background-color: #e4e4e4; font-weight: normal;">
+					</p>
+					<br>
+					<p>Email:
+					<br>
+					<input type="text" name="email" style="color: #000; background-color: #e4e4e4; font-weight: normal;">
+					</p>
+					<br>
+					<p>Inquiry:
+					<br>
+					<textarea name="comment" rows="8" cols="35" style="color: #000; background-color: #e4e4e4; font-weight: normal;"></textarea>
+					</p>
+					<br>
+					<p>
+					<input class="button" type="submit" value="Submit"/>
+					</p>
+				</fieldset>
+			</form>
+		</div>
+		<div class="footer">
+			<p>Cars Unlimited Auto Sales, Inc. &nbsp;&nbsp;| &nbsp;&nbsp;   joey.dibitetto@steemer.com &nbsp;&nbsp;|&nbsp;&nbsp;    Site Map</p>
+		</div>
+	</body>
+</html>

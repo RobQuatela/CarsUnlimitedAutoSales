@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width", initial-scale="1">
+		<title>Cars Unlimited Auto Sales</title>
+		
+		<link rel="stylesheet" href="css/cuas.css">
+
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+	<!--<script>
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				var sticky = $('.banner').offset().top;
+				if($(window).scrollTop() > sticky) {
+					$('.banner').addClass('banner-fixed');
+				}
+				else {
+					$('.banner').removeClass('banner-fixed');
+				}
+			});
+		});
+	</script>-->
+		<style>
+			div.img {
+				margin-bottom: 15px;
+				float: left;
+				width: 100%;
+				height: 400px;
+				border-radius: 25px;
+				background: #e4e4e4;
+			}
+			div.img img {
+				width: 100%;
+				height: 100%;
+				transition: opacity 1s ease-in-out;
+			}	
+			#img {
+				opacity: 1;
+				transition: opacity 1s;
+			}
+			#img.fadeOut {
+				opacity: 0;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			var images = [];
+			var x = -1;
+			images[0] = "images/peoplecar.jpg";
+			images[1] = "images/bmw.jpg";
+			images[2] = "images/z.jpg";
+			
+			function nextImage() {
+				document.getElementById("img").className += "fadeOut";
+				setTimeout(function() {
+					document.getElementById("img").src = images[x];
+					document.getElementById("img").className = "";
+				}, 1000);
+				x++;
+				if(x === images.length) {
+					x = 0;
+				}
+				setTimeout(nextImage, 3000);
+			}
+			nextImage();
+		</script>
+	</head>
+	
+
+
+	<body style="background: #e4e4e4;" onload="nextImage()">
+		<div class="banner">
+			<ul>
+				<li class="title">Cars Unlimited Auto Sales</li>
+				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="cars.html">Cars</a></li>
+				<li class="active"><a href="index.html">Home</a></li>
+			</ul>
+		</div>
+		<div class="container-fluid text-center">
+			<div class="row container-fluid">
+				<div class="col-sm-12 container-fluid">
+					<div class="img" id="change-image">
+						<img class="img-responsive container-fluid" id="img" src="images/peoplecar.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="row container-fluid body-border">
+				<div class="col-sm-6 container-fluid">
+					<h1>About Us</h1>
+						<p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu lorem et nisi posuere egestas. Etiam eget quam vitae neque convallis consequat nec et lacus. Nulla vel lectus eu massa pulvinar finibus at vel urna. Etiam eget nunc urna. Maecenas fermentum, ipsum ac aliquam facilisis, nibh sem tincidunt lacus, id fringilla lorem mi vel ligula. Pellentesque mauris lorem, accumsan id est in, molestie efficitur magna. Nulla convallis mauris dolor, id dictum ante viverra eget. Donec at dictum dui. Fusce luctus vitae mauris sit amet vulputate.
+						Fusce diam dui, mollis quis sagittis imperdiet, aliquam ac orci.
+						</p>
+				</div>
+				<div class="col-sm-6 container-fluid">
+					<h1>Services</h1>
+						<p style="text-align: left;">Lorem      ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu lorem et nisi posuere egestas. Etiam eget quam vitae neque convallis consequat nec et lacus. Nulla vel lectus eu massa pulvinar finibus at vel urna. Etiam eget nunc urna. Maecenas fermentum, ipsum ac aliquam facilisis, nibh sem tincidunt lacus, id fringilla lorem mi vel ligula. Pellentesque mauris lorem, accumsan id est in, molestie efficitur magna. Nulla convallis mauris dolor, id dictum ante viverra eget. Donec at dictum dui. Fusce luctus vitae mauris sit amet vulputate.
+						Fusce diam dui, mollis quis sagittis imperdiet, aliquam ac orci.
+						</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Cars Unlimited Auto Sales, Inc. &nbsp;&nbsp;| &nbsp;&nbsp;   joey.dibitetto@steemer.com &nbsp;&nbsp;|&nbsp;&nbsp;    Site Map</p>
+		</div>
+	</body>
+</html>
